@@ -13,9 +13,9 @@
         <copyright>Copyright 2014</copyright>
         <tags>SerializationProviders serialization serialize serializer serialization-providers serialization-provider</tags>
         <dependencies>
-            <package id="Newtonsoft.Json" version="4.5.1" targetFramework="net40" />
-            <package id="protobuf-net" version="2.0.0.621" targetFramework="net40" />
-            <package id="ProviderModel" version="1.0.1" targetFramework="net40" />
+            <dependency id="Newtonsoft.Json" version="4.5.1" />
+            <dependency id="protobuf-net" version="2.0.0.621" />
+            <dependency id="ProviderModel" version="1.0.1" />
         </dependencies>
         <frameworkAssemblies>
             <frameworkAssembly assemblyName="System.Configuration" targetFramework="net40" />
