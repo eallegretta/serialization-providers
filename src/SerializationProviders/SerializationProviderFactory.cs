@@ -35,7 +35,7 @@ namespace SerializationProviders
             yield return new KeyValuePair<string, Lazy<SerializationProviderBase>>("json", new Lazy<SerializationProviderBase>(() => new NewtonsoftJsonSerializationProvider()));
             yield return new KeyValuePair<string, Lazy<SerializationProviderBase>>("xml", new Lazy<SerializationProviderBase>(() => new DotNetXmlSerializationProvider()));
             yield return new KeyValuePair<string, Lazy<SerializationProviderBase>>("bson", new Lazy<SerializationProviderBase>(() => new NewtonsoftBsonSerializationProvider()));
-            yield return new KeyValuePair<string, Lazy<SerializationProviderBase>>("binary", new Lazy<SerializationProviderBase>(() => new DotNetXmlSerializationProvider()));
+            yield return new KeyValuePair<string, Lazy<SerializationProviderBase>>("binary", new Lazy<SerializationProviderBase>(() => new ProtobufSerializationProvider()));
         }
     }
 }

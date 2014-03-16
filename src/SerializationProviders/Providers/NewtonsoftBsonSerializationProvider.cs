@@ -18,7 +18,7 @@ namespace SerializationProviders.Providers
         /// <param name="destination">The destination.</param>
         public override void Serialize(Type type, object value, Stream destination)
         {
-            var serializer = new JsonSerializer();
+            var serializer = new JsonSerializer { ReferenceLoopHandling = ReferenceLoopHandling.Ignore };
             var bsonWriter = new BsonWriter(destination);
             serializer.Serialize(bsonWriter, value, type);
         }
@@ -44,7 +44,7 @@ namespace SerializationProviders.Providers
         /// </returns>
         public override T Deserialize<T>(Stream source)
         {
-            var serializer = new JsonSerializer();
+            var serializer = new JsonSerializer { ReferenceLoopHandling = ReferenceLoopHandling.Ignore };
             var bsonReader = new BsonReader(source);
             return serializer.Deserialize<T>(bsonReader);
         }
@@ -59,7 +59,7 @@ namespace SerializationProviders.Providers
         /// </returns>
         public override object Deserialize(Type type, Stream source)
         {
-            var serializer = new JsonSerializer();
+            var serializer = new JsonSerializer { ReferenceLoopHandling = ReferenceLoopHandling.Ignore };
             var bsonReader = new BsonReader(source);
             return serializer.Deserialize(bsonReader);
         }
